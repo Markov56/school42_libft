@@ -14,25 +14,19 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	d = (unsigned char *) dest;
-	s = (unsigned char *) src;
+	d = dest;
+	s = src;
 	if (!dest && !src)
 		return (NULL);
-	while (n > 0)
-	{
+	while (n--)
 		*d++ = *s++;
-		n--;
-	}
 	return (dest);
 }
 
 /*
-#include <string.h>
-#include <stdio.h>
-
 int	main(void)
 {
 	char	src[] = "Hello, world!";
@@ -45,7 +39,8 @@ int	main(void)
 	dest1[5] = '\0';
 	dest2[5] = '\0';
 
-	printf("my fn res: %s\n from lib res: %s\n", (char *)res1, (char *)res2);
+	printf("my fn res: %s\nfrom lib res: %s\n", (char *)res1, (char *)res2);
 
 	return 0;
-}*/
+}
+*/

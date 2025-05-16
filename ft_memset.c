@@ -17,10 +17,30 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*p;
 
 	p = s;
-	while (n > 0)
-	{
+	while (n--)
 		*p++ = (unsigned char) c;
-		n--;
-	}
 	return (s);
 }
+
+/*
+int main(void)
+{
+	char buf1[20] = "Hello, world!";
+	char buf2[20] = "Hello, world!";
+
+	//ft_memset
+	ft_memset(buf1 + 7, '*', 5);
+	//memset
+	memset(buf2 + 7, '*', 5);
+
+	printf("ft_memset result:  %s\n", buf1);
+	printf("memset result:     %s\n", buf2);
+
+	printf("\nByte comparison:\n");
+	for (int i = 0; i < 20; i++)
+		printf("buf1[%d] = %02x, buf2[%d] = %02x\n",
+			i, (unsigned char)buf1[i], i, (unsigned char)buf2[i]);
+
+	return (0);
+}
+*/
