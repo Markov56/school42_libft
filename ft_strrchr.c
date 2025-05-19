@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/19 15:36:57 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/05/19 15:36:59 by rmarkov          ###   ########.fr       */
+/*   Created: 2025/05/19 16:08:08 by rmarkov           #+#    #+#             */
+/*   Updated: 2025/05/19 16:08:09 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
-	i = 0;
-	while (s[i])
+	i = ft_strlen(s);
+	while (1)
 	{
 		if ((unsigned char)s[i] == (unsigned char)c)
 			return ((char *)(s + i));
-		i++;
+		if (i == 0)
+			break ;
+		i--;
 	}
-	if ((unsigned char)s[i] == (unsigned char)c)
-		return ((char *)(s + i));
 	return (NULL);
 }
-
 /*
 int	main()
 {
 	const char str[] = "hello world";
-	char *ptr1 = ft_strchr(str, 'l');
-	char *ptr2 = strchr(str, 'l');
+	char *ptr1 = ft_strrchr(str, 'v');
+	char *ptr2 = strrchr(str, 'v');
 	
 	printf("my func: %s\n", ptr1);
 	printf("c func: %s\n", ptr2);
-	
 	return (0);
 }
 */
