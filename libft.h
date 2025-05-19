@@ -30,5 +30,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif
