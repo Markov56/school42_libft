@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 19:06:40 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/05/19 19:06:42 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/05/20 16:00:45 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*s_ptr;
 
 	i = 0;
-	s_ptr = s;
+	s_ptr = (const unsigned char *)s;
 	while (i < n)
 	{
 		if (s_ptr[i] == (unsigned char)c)
