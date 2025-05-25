@@ -6,7 +6,7 @@
 /*   By: rmarkov <rmarkov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 19:39:52 by rmarkov           #+#    #+#             */
-/*   Updated: 2025/05/25 17:59:45 by rmarkov          ###   ########.fr       */
+/*   Updated: 2025/05/25 18:49:18 by rmarkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char 	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
