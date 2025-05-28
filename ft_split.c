@@ -21,10 +21,10 @@ static int	ft_count_words(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] != c && s[i])
+		if (s[i] != c)
 		{
 			count++;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -57,7 +57,7 @@ char	**ft_split(char const *s, char c)
 	char	**words;
 
 	words = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!words || !s || !c)
+	if (!words)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			words[j] = ft_extract_word(s + i, c);
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 			j++;
 		}
