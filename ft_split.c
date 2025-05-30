@@ -50,6 +50,16 @@ static char	*ft_extract_word(const char *s, char c)
 	return (word);
 }
 
+static void	ft_free_result(char **arr, size_t count)
+{
+	while (count > 0)
+	{
+		count--;
+		free(arr[count]);
+	}
+	free(arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -66,6 +76,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			words[j] = ft_extract_word(s + i, c);
+			if (!words[j])
+				return (ft_free_result(words, j), NULL);
 			while (s[i] && s[i] != c)
 				i++;
 			j++;
